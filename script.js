@@ -2,7 +2,7 @@
 const questionEl = document.getElementById("question");
 const questionNrSpan = document.querySelector("#question-nr span");
 const currentQuestionSpan = document.getElementById("current-question");
-const buttonsContainer = document.getElementById("button");
+const buttonsContainer = document.querySelector(".buttons")
 const welcomeLine1 = document.querySelector(".welcome-line-1");
 const welcomeLine2 = document.querySelector(".welcome-line-2");
 const pickSubjectText = document.getElementById("pick-subject-text");
@@ -71,7 +71,7 @@ function initToggleSwitch() {
 // ------------------- APPLY DARK / LIGHT MODE -------------------
 function applyDarkMode() {
   document.body.style.background = "#313e51";
-  document.body.style.backgroundImage = 'url("assets/images/pattern-background-mobile-dark.svg")';
+  updateBackgroundImage();
   if (welcomeLine1) welcomeLine1.style.color = "white";
   if (welcomeLine2) welcomeLine2.style.color = "white";
   if (pickSubjectText) pickSubjectText.style.color = "#abc1e1";
@@ -103,7 +103,16 @@ function applyDarkMode() {
 
 function applyLightMode() {
   document.body.style.background = "var(--grey-50)";
-  document.body.style.backgroundImage = 'url("assets/images/pattern-background-mobile-light.svg")';
+  document.body.style.backgroundImage = window.innerWidth >= 1025
+    ? 'url("assets/images/pattern-background-desktop-light.svg")'
+    : window.innerWidth >= 768
+    ? 'url("assets/images/pattern-background-tablet-light.svg")'
+    : 'url("assets/images/pattern-background-mobile-light.svg")';
+  
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundPosition = "center";
+
   if (welcomeLine1) welcomeLine1.style.color = "black";
   if (welcomeLine2) welcomeLine2.style.color = "black";
   if (pickSubjectText) pickSubjectText.style.color = "black";
@@ -123,7 +132,6 @@ function applyLightMode() {
     btn.style.color = "black";
   });
 
-  // Score box light mode (if visible)
   if (endBox && !endBox.classList.contains("hidden")) {
     endBox.style.backgroundColor = "white";
     endBox.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
@@ -132,6 +140,7 @@ function applyLightMode() {
     if (endTotal) endTotal.style.color = "#626c7f";
   }
 }
+
 
 // ------------------- FETCH QUIZ DATA -------------------
 fetch("data.json")
@@ -318,13 +327,13 @@ submitBtn.addEventListener("click", () => {
   const optionButtons = buttonsContainer.querySelectorAll(".quiz-button");
 
   if (!isSubmitted) {
-   const errorDiv = document.getElementById("submit-error");
-if (!selectedAnswer) {
-  if (errorDiv) errorDiv.classList.remove("hidden"); // show error
-  return;
-} else {
-  if (errorDiv) errorDiv.classList.add("hidden"); // hide error if previously shown
-}
+    const errorDiv = document.getElementById("submit-error");
+    if (!selectedAnswer) {
+      if (errorDiv) errorDiv.classList.remove("hidden"); // show error
+      return;
+    } else {
+      if (errorDiv) errorDiv.classList.add("hidden"); // hide error if previously shown
+    }
 
     const correctAnswer = currentQuiz.questions[currentQuestionIndex].answer;
 
@@ -453,6 +462,36 @@ function showQuizEnd() {
     };
   }
 }
+
+
+
+
+function updateBackgroundImage() {
+  const darkMode = document.documentElement.classList.contains("dark");
+
+  if (window.innerWidth >= 1025) {
+    // DESKTOP
+    document.body.style.backgroundImage = darkMode
+      ? 'url("assets/images/pattern-background-desktop-dark.svg")'
+      : 'url("assets/images/pattern-background-desktop-light.svg")';
+  } else if (window.innerWidth >= 768) {
+    // TABLET
+    document.body.style.backgroundImage = darkMode
+      ? 'url("assets/images/pattern-background-tablet-dark.svg")'
+      : 'url("assets/images/pattern-background-tablet-light.svg")';
+  } else {
+    // MOBILE
+    document.body.style.backgroundImage = darkMode
+      ? 'url("assets/images/pattern-background-mobile-dark.svg")'
+      : 'url("assets/images/pattern-background-mobile-light.svg")';
+  }
+
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundRepeat = "no-repeat";
+}
+
+updateBackgroundImage();
+window.addEventListener("resize", updateBackgroundImage);
 
 // ------------------- INIT -------------------
 document.addEventListener("DOMContentLoaded", () => {
