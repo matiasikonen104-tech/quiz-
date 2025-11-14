@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <title>Frontend Quiz</title>
+</head>
+
+<body>
+  <div class="page-wrapper">
+  <div class="container">
+
+    <!-- Left column: category, question, progress -->
+    <div class="left-column">
+      <div class="header">
+        <div class="category">
+          <div id="catImage"><img src="assets/images/icon-js.svg" alt="Category Icon"></div>
+          <div id="categoryName"><span class="text-preset-4">JS</span></div>
+        </div>
+
+        <div class="toggle-container">
+          <!-- Toggle goes here -->
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div class="welcome-text"><span></span></div>
+        <div id="question-nr"><span class="text-preset-5-mobile"></span></div>
+        <div id="question">
+          <div id="current-question" class="text-preset-3-mobile bold"></div>
+          <span class="text-preset-2-mobile welcome-line-1">Welcome to the <br></span>
+          <span class="text-preset-2-mobile text-bold-q welcome-line-2">Frontend Quiz!</span>
+        </div>
+        <p id="pick-subject-text" class="text-preset-5-mobile">Pick a subject to get started</p>
+
+        <div class="progress-container">
+          <div id="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right column: options + submit + error -->
+    <div class="right-column">
+      <div class="buttons text-preset-4-mobile" id="button"></div>
+      <button class="submit" id="submitBtn">Submit Answer</button>
+      <div id="submit-error" class="submit-error hidden">
+        <img src="assets/images/icon-error.svg" alt="Error" class="error-icon">
+        <span class="error-text">Please select an answer!</span>
+      </div>
+
+      <div id="quiz-end-box" class="hidden">
+        <div class="quiz-end-content">
+          <img id="end-category-icon" src="" alt="Category Icon" />
+          <span id="end-category-name" class="bold"></span>
+          <p id="end-score"></p>
+          <p id="end-total"></p>
+          <button id="play-again-btn">Play Again</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,510 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --grey-500: #626c7f;
+  --grey-50: #f4f6fa;
+  --blue-950: #2d3949;
+  --blue-900: #313e51;
+  --blue-850: #3b4d66;
+  --blue-500: #306aff;
+  --blue-300: #abc1e1;
+  --blue-100: #edf1f9;
+  --blue-50: #ebf0ff;
+  --green-500: #2fd887;
+  --green-100: #e0fdef;
+  --purple-600: #a729f5;
+  --purple-100: #f6e7ff;
+  --orange-400: #ff7e35;
+  --orange-50: #fff5ed;
+  --red-500: #ee5454;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--grey-50);
+  background-image: url("assets/images/pattern-background-mobile-light.svg");
+  font-family: 'Rubik', sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ================== TEXT PRESETS ================== */
+.text-preset-2-mobile {
+  font-size: 4rem;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.text-preset-3-mobile {
+  font-family: "Rubik", sans-serif;
+  font-size: 2rem;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+
+.Text-Preset-4-Mobile {
+  font-family: "Rubik Medium", sans-serif;
+  font-size: 1.8rem;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+.text-preset-5-mobile {
+  font-family: "Rubik", sans-serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.text-preset-5-regular {
+  font-family: "Rubik Regular", sans-serif;
+  font-size: 2.4rem;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+.text-preset-3{
+  font-family: "Rubik Medium", sans-serif;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0px;
+}
+
+.text-preset-4{
+  font-family: "Rubik Medium", sans-serif;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+.text-preset-5{
+  font-family: "Rubik Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+.text-preset-6{
+  font-family: "Rubik Italic", sans-serif;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+
+
+.bold {
+  font-weight: bold;
+}
+
+/* ================== LAYOUT ================== */
+.container {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#pick-subject-text {
+  margin-top: 2rem;
+}
+
+#catImage img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.end-category-  header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+#end-total {
+  font-family: "text-preset-5-regular" sans-serif;
+  font-size: 3rem;
+}
+
+#end-category-icon {
+  width: 4.2rem;
+  height: 4.2rem;
+}
+
+#end-category-name {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: var(--grey-500);
+}
+
+/* Score page container */
+.score-page {
+  text-align: center;
+  padding: 2rem;
+  background: var(--grey-100);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Category name (ex: HTML, CSS, etc.) */
+.score-category-name {
+  font-size: 1.5rem;
+  color: var(--purple-600);
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+#quiz-end-box {
+  width: 32.7rem;
+  margin-top: 2rem;
+}
+
+/* Score value (number) */
+.score-value {
+  font-size: 8rem;
+  font-family: "Rubik Medium", sans-serif;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+/* "out of X" text */
+.score-total {
+  font-size: 1rem;
+  color: var(--grey-600);
+  margin-top: 0.25rem;
+}
+
+/* Play again button */
+.play-again-btn {
+  margin-top: 2rem;
+  background: var(--purple-600);
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  border: none;
+  border-radius: 12px;
+  padding: 2rem 1.6rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.play-again-btn:hover {
+  background: #a855f7;
+}
+
+
+/* ================== TOGGLE SWITCH ================== */
+.toggle-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+/* Toggle wrapper */
+.toggle-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: var(--purple-600);
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Hidden checkbox */
+.toggle-switch input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Knob */
+.slider {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  background-color: var(--white);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: left 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Move knob when checked */
+.toggle-switch input:checked+.slider {
+  left: calc(100% - 28px);
+}
+
+/* Optional icons inside toggle */
+.toggle-icons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 14px;
+  color: var(--white);
+}
+
+/* ================== QUESTION AREA ================== */
+.question-container {
+  width: 100%;
+}
+
+#question-nr {
+  margin-top: 3.2rem;
+  color: var(--grey-500);
+}
+
+#question {
+  margin-top: 1.2rem;
+  color: var(--blue-900);
+}
+
+.text-bold-q {
+  font-weight: bolder;
+  color: var(--blue-900);
+}
+
+.progress-container {
+  width: 100%;
+  height: 1rem;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 2.4rem;
+}
+
+#progress-bar {
+  width: 60%;
+  height: 1rem;
+  background-color: var(--purple-600);
+  border-radius: 0.5rem;
+  transition: width 0.4s ease-in-out;
+}
+
+/* ================== QUIZ BUTTON ================== */
+.buttons {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.option-icon img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+
+.quiz-button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  height: 7.2rem;
+  padding: 0.2rem 0.8rem;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background-color: var(--white);
+  font-family: "Rubik Medium", sans-serif;
+  font-size: 2rem;
+  line-height: 120%;
+  color: var(--blue-900);
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-button .left-box {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--grey-50);
+  color: var(--grey-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.quiz-button:hover {
+  border-color: var(--purple-600);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ================== SUBMIT BUTTON ================== */
+.submit {
+  width: 100%;
+  height: 5.6rem;
+  background-color: var(--purple-600);
+  color: var(--white);
+  font-family: "Rubik Medium", sans-serif;
+  font-size: 2rem;
+  line-height: 120%;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  margin-top: 1.4rem;
+}
+
+.submit:hover {
+  background-color: #9620e6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ================== SCORE BOX ================== */
+#quiz-end-box {
+  width: 100%;
+  height: 350px;
+  margin: 20px auto;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#quiz-end-box.hidden {
+  display: none;
+}
+
+.submit-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--red-500);
+  font-size: 2rem; /* adjust for readability */
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.submit-error img.error-icon {
+  width: 40px; /* adjust size */
+  height: 40px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* ================== TABLET LAYOUT ================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Quiz container */
+  .container {
+    width: 768px;
+    height: 1024px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--grey-50);
+  }
+
+  /* Question text */
+  #current-question {
+    font-family: "Rubik Medium", sans-serif;
+    font-size: 36px; /* text-preset-3 */
+    line-height: 1.2;
+  }
+
+  /* Option buttons */
+  .quiz-button.option-btn {
+    width: 640px;   /* tablet fixed width */
+    height: 88px;   /* tablet fixed height */
+    font-size: 28px; /* text-preset-4 */
+    line-height: 1;
+  }
+
+  /* Left-box (A/B/C/D) inside buttons */
+  .quiz-button .left-box {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+
+  /* Category name */
+  #categoryName span,
+  .category-name {
+    font-size: 28px; /* text-preset-4 */
+    font-weight: bold;
+  }
+
+  /* Submit button */
+  .submit {
+    width: 640px;
+    height: 88px;
+    font-size: 28px; /* text-preset-4 */
+  }
+
+  /* Progress bar */
+  .progress-container {
+    height: 1.6rem;
+  }
+
+  #progress-bar {
+    height: 1.6rem;
+  }
+
+  /* Quiz end box */
+  #quiz-end-box {
+    width: 640px;
+    height: auto;
+    padding: 2rem;
+  }
+
+  /* Buttons container alignment */
+  .buttons {
+    align-items: center;
+  }
+}
+
+
