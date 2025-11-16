@@ -181,6 +181,7 @@ body {
   font-weight: bold;
   font-size: 1.8rem;
   color: var(--grey-500);
+  
 }
 
 /* Score page container */
@@ -196,8 +197,7 @@ body {
 .score-category-name {
   font-size: 1.5rem;
   color: var(--purple-600);
-  font-weight: bold;
-  margin-top: 0.5rem;
+  font-weight: bold;  
 }
 
 #quiz-end-box {
@@ -212,6 +212,11 @@ body {
   font-weight: 700;
   margin-top: 1rem;
 }
+
+/* #end-category-name {
+  margin-top: 300px;
+  position: absolute
+} */
 
 /* "out of X" text */
 .score-total {
@@ -595,12 +600,14 @@ body {
   }
 
   .progress-container {
-    width: 100%;
+    width: 45rem;
     height: 1rem;
-    margin-top: 4rem;
+    margin-top: 10rem;
     background-color: var(--grey-50);
     border-radius: 0.5rem;
     overflow: hidden;
+    position: absolute;
+    bottom: 25rem;
   }
 
   #progress-bar {
@@ -608,14 +615,10 @@ body {
     background-color: var(--purple-600);
     border-radius: 0.5rem;
     transition: width 0.4s ease-in-out;
+    width: 10px;
+
   }
 
-.cat-container {
-  display: flex;             /* arrange icon + name in a row */
-  align-items: center;       /* vertically center them */
-  gap: 1rem;                 /* spacing between icon and name */
-  position: relative;        /* optional, if you need to position the container */
-}
 
 #categoryName span,
 #end-category-name {
@@ -666,7 +669,7 @@ body {
 
   .quiz-button {
     width: 100%;
-    height: 92px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -686,7 +689,7 @@ body {
 
   .submit {
     width: 564px;
-    height: 92px;
+    height: 80px;
     font-size: 2.4rem;
     margin-top: 2rem;
     border-radius: 16px;
@@ -701,7 +704,8 @@ body {
   }
 
   .question-container {
-    top: -350px!important;
+        margin-top: -78px; /* move up 50px */
+  
   }
 
   .cat-container {
@@ -713,6 +717,127 @@ body {
   position: absolute;
 }
 
-}
+
+
+   /* Outer box */
+  #quiz-end-box {
+    display: flex;                  /* make it a flex container */
+    justify-content: center;         /* center horizontally */
+    align-items: center;             /* center vertically */
+    width: 100%;                     /* full width of parent */
+    min-height: 500px;               /* enough space for content */
+    padding: 2rem;
+  }
+
+  /* Inner content */
+  .quiz-end-content {
+    width: 564px;                    /* match quiz buttons */
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;          /* stack elements vertically */
+    justify-content: center;         /* center vertically inside content */
+    align-items: center;             /* center horizontally */
+    text-align: center;
+  }
+
+  /* Category icon + name */
+  .cat-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+   /* {
+    width: 5rem;
+    height: 5rem;
+    margin-top: -30rem; */
+  }
+
+  #end-category-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--blue-900);
+    margin-top: -1000rem;
+    font-size: 3rem;
+    position: absolute;
+    margin-top: -300px!important;
+    left: -40px;
+    /* top: 1000px; */
+  }
+
+    #end-category-icon {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--blue-900);
+    margin-top: -1000rem;
+    font-size: 3rem;
+    position: absolute;
+    margin-top: -300px!important;
+    left: -110px;
+    /* top: 1000px; */
+  }
+
+  /* Score number */
+  #end-score {
+    font-size: 15rem;
+    font-weight: 700;
+    margin-bottom: -13rem;
+  }
+
+  /* "Out of X" text */
+  #end-total {
+    font-size: 1.8rem;
+    color: var(--grey-600);
+    margin-bottom: 1rem;
+  }
+
+  /* Play Again button */
+  #play-again-btn {
+    width: 100%;
+    height: 80px;
+    font-size: 2.4rem;
+    border-radius: 16px;
+    background-color: var(--purple-600);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #play-again-btn:hover {
+    background-color: #a855f7;
+  }
+
+    #end-total, .score-total {
+    font-size: 3rem;               /* smaller than main score */
+    color: var(--grey-600);        /* subtle grey */
+    margin-top: 1rem;              /* spacing from score number */
+    font-weight: 500;              /* medium weight */
+    letter-spacing: 0.5px;         /* optional spacing for style */
+    margin-top: 130px;
+  }
+
+  #question {
+    margin-top: 100px;
+  }
+
+  #question span {
+    font-size: 6rem;
+  }
+
+  .category {
+    margin-top: 28px;
+  }
+
+  #question-nr {
+    margin-top: 100px;
+  }
+
+  #current-question {
+    margin-top: -60px;
+  }
+
 
 

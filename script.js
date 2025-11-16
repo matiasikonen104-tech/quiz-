@@ -409,6 +409,24 @@ function showQuizEnd() {
 
   endBox.classList.remove("hidden");
   endBox.classList.add("score-page");
+  const isMobile = window.innerWidth <= 768;
+
+if (isMobile) {
+  if (endCategoryIcon) endCategoryIcon.style.display = "none";
+  if (endCategoryName) endCategoryName.style.display = "none";
+} else {
+  // desktop: show normally
+  if (endCategoryIcon) {
+    endCategoryIcon.src =
+      categoryIcons[currentQuiz.title] || "assets/images/icon-default.svg";
+  }
+
+  if (endCategoryName) {
+    endCategoryName.textContent = currentQuiz.title;
+    endCategoryName.classList.add("score-category-name");
+  }
+}
+
 
   if (endCategoryIcon) endCategoryIcon.src = categoryIcons[currentQuiz.title] || "assets/images/icon-default.svg";
   if (endCategoryName) {
